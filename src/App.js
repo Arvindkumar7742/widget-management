@@ -3,7 +3,7 @@ import { Main } from './Main';
 
 function App() {
   return (
-    <div className="">
+    <div className="w-screen min-h-screen bg-blue-100">
       <Main />
     </div>
   );
