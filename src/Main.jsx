@@ -15,7 +15,8 @@ export const Main = () => {
                         className='p-1 lg:w-[500px] md:w-[300px] sm:w-[100px] rounded-md outline-none'
                         type="text" placeholder="Search anything..." />
                     <button
-                        className='flex items-center gap-2 border-2 border-slate-500 p-2 rounded-lg'
+                        className='flex items-center gap-2 border-2 border-slate-500 p-2 rounded-lg
+                        hover:bg-black hover:text-white transition-all duration-300'
                     ><FaPlus /> Add widget</button>
                 </div>
             </div>

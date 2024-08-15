@@ -1,22 +1,26 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { removeWidget } from '../slices/CategorySlice';
+import React, { useState } from 'react'
 import { MdOutlineCancel } from "react-icons/md";
+import { DeleteModal } from '../Modal/DeleteModal';
 
 export const Card = ({ cat_id, widget }) => {
-  const dispatch = useDispatch();
+
+  const [deleteModal,setDeleteModal] = useState(false);
+  
   return (
-    <div className='w-[350px] h-[200px] bg-white border-2 border-slate-300 rounded-lg p-2 group'>
+    <div className='w-[350px] h-[200px] bg-white border-2 border-slate-300 rounded-lg p-2 '>
       <div className='flex flex-row justify-between'>
-        <p className='text-lg font-serif'>{widget.wid_name}</p>
+        <p className='text-lg font-serif font-bold'>{widget.wid_name}</p>
         <button
-        className='opacity-0 group-hover:opacity-100 text-xl
+        className=' text-xl
         transition-all duration-200'
         onClick={() => {
-        dispatch(removeWidget({ id: cat_id, widget_id: widget.id }))
+          setDeleteModal(true);
       }}><MdOutlineCancel /></button>
       </div>
-      <p className='flex items-center justify-center pt-2 text-sm font-mono '>{widget.wid_text}</p>
+      <p className='flex items-center justify-center pt-2 text-sm font-mono'>{widget.wid_text}</p>
+      {
+        deleteModal && <DeleteModal wid_name={widget.wid_name} setDeleteModal={setDeleteModal} cat_id={cat_id} wid_id={widget.id}/>
+      }
     </div>
   )
 }
