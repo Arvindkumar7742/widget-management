@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Widgets } from './components/Widgets';
 import { useSelector } from 'react-redux';
 import { FaPlus } from "react-icons/fa6";
+import { EditWidgetModal } from './Modal/EditWidgetModal';
 
 export const Main = () => {
-    const categories = useSelector((state) => state.category.category)
+    const categories = useSelector((state) => state.category.category);
+    const [editWidgetModal , setEditWidgetModal] = useState(false);
 
     return (
         <div className='flex flex-col p-4'>
@@ -17,6 +19,9 @@ export const Main = () => {
                     <button
                         className='flex items-center gap-2 border-2 border-slate-500 p-2 rounded-lg
                         hover:bg-black hover:text-white transition-all duration-300'
+                        onClick={()=>{
+                            setEditWidgetModal(true);
+                        }}
                     ><FaPlus /> Add widget</button>
                 </div>
             </div>
@@ -30,6 +35,9 @@ export const Main = () => {
                     ))
                 }
             </div>
+            {
+                editWidgetModal && <EditWidgetModal setEditWidgetModal={setEditWidgetModal}/>
+            }
         </div>
     )
 }

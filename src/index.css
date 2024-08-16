@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.backdrop-dark {
+    background-color: rgba(50, 48, 48, 0.8); /* Adjust the opacity as needed */
+    backdrop-filter: blur(1px);
+  }

@@ -9,7 +9,7 @@ export const Card = ({ cat_id, widget }) => {
   return (
     <div className='w-[350px] h-[200px] bg-white border-2 border-slate-300 rounded-lg p-2 '>
       <div className='flex flex-row justify-between'>
-        <p className='text-lg font-serif font-bold'>{widget.wid_name}</p>
+        <p className='text-lg font-bold'>{widget.wid_name}</p>
         <button
         className=' text-xl
         transition-all duration-200'
@@ -17,7 +17,7 @@ export const Card = ({ cat_id, widget }) => {
           setDeleteModal(true);
       }}><MdOutlineCancel /></button>
       </div>
-      <p className='flex items-center justify-center pt-2 text-sm font-mono'>{widget.wid_text}</p>
+      <p className='flex items-center justify-center pt-2 text-sm font-sans'>{widget.wid_text}</p>
       {
         deleteModal && <DeleteModal wid_name={widget.wid_name} setDeleteModal={setDeleteModal} cat_id={cat_id} wid_id={widget.id}/>
       }

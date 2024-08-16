@@ -5,7 +5,7 @@ import { removeWidget } from '../slices/CategorySlice';
 export const DeleteModal = ({ wid_name, cat_id, wid_id, setDeleteModal }) => {
     const dispatch = useDispatch();
     return (
-        <div className='fixed inset-0 backdrop-blur-lg grid place-items-center'>
+        <div className='fixed inset-0 backdrop-dark  grid place-items-center'>
             <div className='flex flex-col gap-2 bg-white p-5 rounded-lg border-2 border-slate-400 '>
                 <p className='text-lg'>Are You Sure want to delete the Widget name : <span className='font-bold'>{wid_name}</span></p>
                 <div className='flex flex-row gap-4'>

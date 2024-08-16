@@ -33,7 +33,7 @@ export const AddWidgetModal = ({ setAddWidgetModal, cat_id }) => {
         })
     }
     return (
-        <div className='fixed inset-0 grid place-items-center backdrop-blur-lg'>
+        <div className='fixed inset-0 grid place-items-center backdrop-dark '>
             <div className='flex flex-col gap-1 border-[1px] bg-white rounded-md w-[450px]'>
                 <div className='mt-5 ml-5 mr-5 flex flex-row justify-between'>
                     <p className='text-xl font-bold'>Widget</p>
