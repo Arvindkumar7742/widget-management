@@ -6,14 +6,14 @@ import { addWidget } from '../slices/CategorySlice';
 export const AddWidgetModal = ({ setAddWidgetModal, cat_id }) => {
     const dispatch = useDispatch();
     const [widgetData, setWidgetData] = useState({
-        wid_name: "",
-        wid_text: "",
+        wid_name:"",
+        wid_text:"",
     })
 
     function changeHandler(e) {
         setWidgetData({
             ...widgetData,
-            [e.target.name]: [e.target.value]
+            [e.target.name]: e.target.value
         })
     }
 

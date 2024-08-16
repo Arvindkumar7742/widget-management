@@ -45,27 +45,30 @@ export const EditWidgetModal = ({ setEditWidgetModal }) => {
 
     return (
         <div className='fixed inset-0 grid place-items-end backdrop-dark'>
-            <div className='bg-white w-[700px] min-h-full flex flex-col'>
+            <div className='flex flex-col gap-3 bg-white w-[700px] min-h-full'>
                 <div className='flex flex-row justify-between p-3 bg-blue-800 text-white'>
-                    <p>Add Widget</p>
+                    <p>Edit Widget</p>
                     <div className='text-xl'>
                         <button onClick={() => setEditWidgetModal(false)}>
                             <RxCross2 />
                         </button>
                     </div>
                 </div>
-                <p className='pl-3'>Personalise your dashboard by adding the following widget</p>
+                <p className='pl-3'>Personalise your dashboard by editing the following widget</p>
                 <div className='pl-3 flex flex-row'>
                     {categories.map((category) => (
                         <div key={category.id}>
                             <p
-                                className={`${selected === category.id && "font-bold"} pl-[50px] pr-[50px] hover:cursor-pointer`}
+                                className={`${selected === category.id && "font-bold"} pl-[50px] pr-[50px] hover:cursor-pointer
+                                transition-all duration-100`}
                                 onClick={() => setSelected(category.id)}
                             >
-                                {category.name.slice(0, 4)}
+                                {category.short_name}
                             </p>
                             <div
-                                className={`${selected === category.id ? "bg-slate-800" : " bg-slate-400"} w-full h-[2px]`}
+                                className={`${selected === category.id ? "bg-slate-800" : " bg-slate-400"} w-full h-[2px]
+                                transition-all duration-100
+                                `}
                             ></div>
                         </div>
                     ))}
